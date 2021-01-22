@@ -46,7 +46,6 @@
 							<h2 id="SAFTAN"></h2>
 							<br>
 							<br>
-							<br>
 							<h2><b>Review-based Recommender System</b></h2>	 
 								<header>
 									<p>A Framework of Composing Semantic Analysis
@@ -94,7 +93,6 @@
 								<h2 id="Data-Classification"></h2>
 								<br>
 								<br>
-								<br>
 								<h2><b>Data-Classification With Keyword Retrieval</b></h2>
 								<header>
 									<p>
@@ -106,10 +104,26 @@
 									<li>CKIP Tokenization for Chinese Words</li>
 									<li>Analyze the Chinese Corpus and Retrieve Keywords</li>
 								</ul>
-								<h3>Progress</h3>
-								<p>
-									
-								</p>
+								<h3>Done</h3>
+								<ol>
+									<li>Conduct ngram(3-gram) and tfidf to weight the importance of each words</li>
+									<li>Eliminate words with low frequency</li>
+									<li>Take product with labels(google product category) to train KNN.</li>
+									<li>Utilize the trained KNN as a classifier to label the unlabelled products</li>
+								</ol>
+								<h3>Issues</h3>
+								<ul>
+									<li>Using ngram + tfidf connot represent the semantic meaning of sentences effictively</li>
+									<li>Due to product information such as title, name and body_html contain only few words, KNN performs badly</li>
+								</ul>
+								<h3>Problem Solving</h3>
+								<ul>
+									<li>Analyze keywords for each google category</li>
+									<li>Utilize CKIP tokenization instead and apply the weights of tokens for voting for the final classification</li>
+									<li>As for the final classification, tokenize each row of product information and check the matches of tokenized terms with google category keywords</li>
+									<li>Select the highest score of the class as the label of the product</li>
+								</ul>
+
 
 	</body>
 </html>
